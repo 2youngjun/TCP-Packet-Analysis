@@ -72,7 +72,7 @@ void print_ip_addr(IPv4HDR* ip_hdr) {
 	printf("%u.%u.%u.%u\n", (src.s_addr >> 0) & 0xFF, (src.s_addr >> 8) & 0xFF, (src.s_addr >> 16) & 0xFF, (src.s_addr >> 24) & 0xFF);
 
 	printf("Destination IP: ");
-	printf("%u.%u.%u.%u\n", (dst.s_addr >> 0) & 0xFF, (dst.s_addr >> 8) & 0xFF, (dst.s_addr >> 16) &     0xFF, (dst.s_addr >> 24) & 0xFF);
+	printf("%u.%u.%u.%u\n", (dst.s_addr >> 0) & 0xFF, (dst.s_addr >> 8) & 0xFF, (dst.s_addr >> 16) & 0xFF, (dst.s_addr >> 24) & 0xFF);
 }
 
 void print_tcp_addr(TcpHDR* tcp_hdr){
@@ -91,6 +91,7 @@ void print_payload(const u_char* payload, u_int8_t len) {
 		len = 10;
 	for(u_int8_t i=0; i<len; i++)
 		printf("%02X ", *(payload+i));
+	printf("\n----------------------------------");
 	printf("\n\n");
 }
 
